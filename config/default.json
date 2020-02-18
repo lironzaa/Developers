@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://lironzaa:liroN123@devconnectorv2-vx3xs.mongodb.net/test?retryWrites=true",
+  "jwtSecret": "asdnusandi123",
+  "githubClientId": "728aba63b8352cef7c10",
+  "githubSecret": "b4bba0d117eb05929b7b4613a815a59c8f8a20cd"
+}
