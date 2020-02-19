@@ -62,7 +62,7 @@ export default function (state = intialState, action) {
     case ADD_COMMENT:
       return {
         ...state,
-        post: { ...state.posts, comments: payload },
+        post: { ...state.post, comments: payload },
         loading: false
       }
     case REMOVE_COMMENT:
@@ -70,7 +70,8 @@ export default function (state = intialState, action) {
         ...state,
         post: {
           ...state.post,
-          comments: state.posts.comment.filter(comment => comment._id !== payload)
+          comments: state.post.comments.filter(
+            comment => comment._id !== payload)
         },
         loading: false
       }
