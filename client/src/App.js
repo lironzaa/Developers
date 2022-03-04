@@ -11,27 +11,27 @@ import setAuthToken from './utills/setAuthToken';
 import './App.css';
 
 if (localStorage.token) {
-  setAuthToken(localStorage.token);
+    setAuthToken(localStorage.token);
 }
 
 const App = () => {
-  useEffect(() => {
-    store.dispatch(loadUser());
-  }, []);
+    useEffect(() => {
+        store.dispatch(loadUser());
+    }, []);
 
-  return (
-    <Provider store={store}>
-      <Router>
-        <Fragment>
-          <Navbar />
-          <Switch>
-            <Route exact path='/' component={Landing} />
-            <Route component={Routes} />
-          </Switch>
-        </Fragment>
-      </Router >
-    </Provider>
-  )
+    return (
+        <Provider store={store}>
+            <Router>
+                <Fragment>
+                    <Navbar/>
+                    <Switch>
+                        <Route exact path='/' component={Landing}/>
+                        <Route component={Routes}/>
+                    </Switch>
+                </Fragment>
+            </Router>
+        </Provider>
+    )
 }
 
 export default App;
