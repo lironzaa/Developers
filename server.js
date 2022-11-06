@@ -12,16 +12,13 @@ app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/profile', require('./routes/api/profile'));
 app.use('/api/posts', require('./routes/api/posts'));
 
-if (process.env.NODE_ENV = 'production') {
-    // app.use(express.static('client/build'));
+console.log(process.env.NODE_ENV);
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
 
-    app.get('/', function(req, res) {
-        res.sendFile(__dirname + '/client/public/index.html');
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     })
-
-    // app.get('*', (req, res) => {
-    //     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    // })
 }
 
 const PORT = process.env.PORT || 5000;
